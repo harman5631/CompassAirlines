@@ -1,0 +1,85 @@
+﻿@{ ViewData["Title"] = "Home Page"; }
+
+<div class="text-center">
+    <h1 class="display-4">Compass Airlines</h1>
+    <p>Where will your next flight take you?</p>
+</div>
+
+<!-- Slideshow -->
+<div class="Slideshow-container">
+
+    <!-- Images -->
+    <div class="Slides">
+        <img src="/images/Flying.gif" style="width:100%">
+    </div>
+
+    <div class="Slides">
+        <img src="/images/NZ1.jpg" style="width:100%">
+    </div>
+
+    <div class="Slides">
+        <img src="/images/NZ2.jpg" style="width:100%">
+    </div>
+
+    <div class="Slides">
+        <img src="/images/NZ3.jpg" style="width:100%">
+    </div>
+
+    <div class="Slides">
+        <img src="/images/NZ4.jpg" style="width:100%">
+    </div>
+
+    <div class="Slides">
+        <img src="/images/NZ5.jpg" style="width:100%">
+    </div>
+
+    <div class="Slides">
+        <img src="/images/NZ6.jpg" style="width:100%">
+    </div>
+
+    <!-- Next & Prev Btns -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Dots -->
+    <div style="text-align:center">
+        <span class="Dot" onclick="currentSlide(1)"></span>
+        <span class="Dot" onclick="currentSlide(2)"></span>
+        <span class="Dot" onclick="currentSlide(3)"></span>
+        <span class="Dot" onclick="currentSlide(4)"></span>
+        <span class="Dot" onclick="currentSlide(5)"></span>
+        <span class="Dot" onclick="currentSlide(6)"></span>
+        <span class="Dot" onclick="currentSlide(7)"></span>
+    </div>
+</div>
+<!-- Slideshow Ends -->
+<!-- I created/edited two paragraph  and an button-->
+<br />
+<br />
+<div id="MyDiv">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <img id="TheCompass" src="~/images/CA-logo-sm-right.png" style="height: 95px; width: 100px; " />
+
+    <h1>Who We Are</h1>
+    <p>
+        Compass Airlines is known for our excellent customer service,
+        friendly staff and the top safety rating. We will get you to your destination
+        safely, and on time. If you're still not convinced book a flight and exerience the full
+        Compass Airlines hospitality. Book you're flight now!
+        <br />
+        <br />
+        <button onclick="window.location.href='https://localhost:44315/Flights'">Book a Flight</button>
+    </p>
+    <br />
+    <br />
+
+    <h1>Contact Us</h1>
+    <p>
+        Do you have questions or concerns? Get in contact with us now.<br /><br />
+        Phone: 0800 977 977<br />
+        Email: CompassAir@gmail.co.nz
+    </p>
+</div>
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/SlideShow.js"></script>

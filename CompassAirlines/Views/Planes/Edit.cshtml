@@ -1,0 +1,59 @@
+﻿@model CompassAirlines.Models.Planes
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<!-- I added an Image to easily know which page you are on -->
+<img src="~/images/Planes.png" style="width:100%" />
+
+<h4>Planes</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PlaneID" />
+            <div class="form-group">
+                <label asp-for="Model" class="control-label"></label>
+                <input asp-for="Model" class="form-control" />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlaneNum" class="control-label"></label>
+                <input asp-for="PlaneNum" class="form-control" />
+                <span asp-validation-for="PlaneNum" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Fit4Flight" /> @Html.DisplayNameFor(model => model.Fit4Flight)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxPassengers" class="control-label"></label>
+                <input asp-for="MaxPassengers" class="form-control" />
+                <span asp-validation-for="MaxPassengers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                <!-- I Added Kgs to make it clear to understand -->
+                <label asp-for="MaxWeight" class="control-label"></label> (kgs)
+                <input asp-for="MaxWeight" class="form-control" />
+                <span asp-validation-for="MaxWeight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

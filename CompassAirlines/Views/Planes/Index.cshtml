@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CompassAirlines.Models.Planes>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<!-- I added an Image to easily know which page you are on -->
+<img src="~/images/Planes.png" style="width:100%" />
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlaneNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fit4Flight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxPassengers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxWeight)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlaneNum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fit4Flight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaxPassengers)
+                </td>
+                <td>
+                    <!-- I Added Kgs to make it clear to understand -->
+                    @Html.DisplayFor(modelItem => item.MaxWeight) kgs
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PlaneID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.PlaneID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PlaneID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

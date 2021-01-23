@@ -1,0 +1,77 @@
+﻿@model CompassAirlines.Models.Flights
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<!-- I added an Image to easily know which page you are on -->
+<img src="~/images/PlaneInterior.png" style="width:100%" />
+
+<div>
+    <h4>Flights</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Staff)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Staff.FullName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Planes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Planes.PlaneNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Passengers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Passengers)
+        </dd>
+        <dt class="col-sm-2">
+
+            <!-- I Added Kgs to make it clear to understand -->
+            @Html.DisplayNameFor(model => model.Weight) kgs
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DepartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DepartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DepartTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DepartTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ArrivalDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ArrivalDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ArrivalTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FlightStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FlightStatus)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FlightID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

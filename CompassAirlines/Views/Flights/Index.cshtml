@@ -1,0 +1,106 @@
+﻿@model IEnumerable<CompassAirlines.Models.Flights>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<!-- I added an Image to easily know which page you are on -->
+<img src="~/images/PlaneInterior.png" style="width:100%" />
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Planes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passengers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightStatus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            //I added safety features to the flights
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Staff.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Planes.PlaneNum)
+
+                    @if (item.Planes.Fit4Flight == false)
+                    {
+                        @:<p class='FlightWarning'>WARNING: WOF Incomplete!</p>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Passengers)
+
+                    @if (item.Planes.MaxPassengers < item.Passengers)
+                    {
+                        @:<p class='FlightWarning'>WARNING: Too Many Passengers!</p>
+                    }
+                </td>
+                <td>
+                    <!-- I Added Kgs to make it clear to understand -->
+                    @Html.DisplayFor(modelItem => item.Weight) kgs
+
+                    @if (item.Planes.MaxWeight < item.Weight)
+                    {
+                        @:<p class='FlightWarning'>WARNING: Plane Overloaded!</p>
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArrivalDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArrivalTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightStatus)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.FlightID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.FlightID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.FlightID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

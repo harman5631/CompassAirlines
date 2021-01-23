@@ -1,0 +1,52 @@
+﻿@model CompassAirlines.Models.Planes
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<!-- I added an Image to easily know which page you are on -->
+<img src="~/images/Planes.png" style="width:100%" />
+
+<div>
+    <h4>Planes</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PlaneNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PlaneNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fit4Flight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Fit4Flight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MaxPassengers)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MaxPassengers)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MaxWeight)
+        </dt>
+        <dd class="col-sm-10">
+            <!-- I Added Kgs to make it clear to understand -->
+            @Html.DisplayFor(model => model.MaxWeight) kgs
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PlaneID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

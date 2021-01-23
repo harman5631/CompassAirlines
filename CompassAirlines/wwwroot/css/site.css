@@ -1,0 +1,126 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+    margin-top: 120px;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    background: linear-gradient(0deg, rgb(0, 117, 255) 0%, rgba(128,187,255,1) 50%, rgba(255,255,255,1) 100%);
+}
+
+
+/* The CSS I Added */
+
+#MyDiv {
+    text-align: center;
+}
+
+#MyDiv button {
+    color: white !important;
+    font-weight: bold;
+    background-color: #80bbff;
+    border: none;
+    border-radius: 25%;
+}
+
+#MyDiv button:hover {
+    background-color: #0075ff;
+}
+
+#HeadNav {
+    background: linear-gradient(180deg, rgb(0, 117, 255) 0%, rgba(128,187,255,1) 50%, rgba(255,255,255,1) 100%);
+}
+
+#HeadNav a {
+    font-size: 25px;
+}
+
+#HeadNav a:hover {
+    text-decoration: underline;
+}
+
+.Center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#logoutForm button {
+    font-size: 25px;
+}
+
+.box {
+    background-color: black;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 200px;
+    top: 200px;
+}
+
+.FlightWarning {
+    color: red;
+    font-weight: bold;
+    font-size: 12px;
+}
